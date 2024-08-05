@@ -306,7 +306,8 @@ module Danger
         message << "\n"
         message << "`#{r['rule_id']}`" # helps writing exceptions // swiftlint:disable:this rule_id
         message << " `#{filename}:#{r['line']}`" # file:line for pasting into Xcode Quick Open
-        
+
+        log "debug: message -> #{message}"
         send(method, message, file: github_filename, line: r['line'])
       end
     end
